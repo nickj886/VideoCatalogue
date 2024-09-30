@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="wrapper">
+    <div class="row">
+        <div class="col-auto">
+            <button onclick="VideoUploader.getCatalogue()">Catalogue</button>
+            <button onclick="VideoUploader.showUploader()">Upload</button>
+        </div>
+    </div>
+    <div id="error-div" class="row" style="display:none;visibility:collapse;">
+        <div class="col">
+            <div id="error-message"></div>
+        </div>
+    </div>
+    <div id="no-catalogue-div" class="row" style="display:none;visibility:collapse;">
+        <div class="col">
+            <div class="message">
+                The catalogue is empty. Use the upload form to add videos.
+            </div>
+        </div>
+    </div>
+    <div id="catalogue-div" class="row" style="display:block;visibility:visible;">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <div class="message">
+                        Select a video from the table to start playback
+                    </div>
+                </div>
+            </div>
+            <div id="video-div" class="row">
+                <div class="col">
+                    <video id="videoPlayer" controls />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <table id="catalogue-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th class="size-column">Size</th>
+                            </tr>
+                        </thead>
+                        <tbody id="catalogueTableBody" />
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="uploader-div" class="row" style="display:none;visibility:collapse;">
+        <div class="col">
+            <form id="uploadForm" action="/video/upload" enctype="multipart/form-data" method="post" onsubmit="return false;">
+                <input id="files" accept=".mp4" multiple name="files" l title="Browse file(s)" type="file"><br /><br />
+                <input type="button" onclick="VideoUploader.uploadVideos()" value="Upload">
+                <input type="reset">
+            </form>
+        </div>
+    </div>
+</div>

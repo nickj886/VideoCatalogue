@@ -1,0 +1,67 @@
+﻿button, input[type=button], input[type=file]::file-selector-button, input[type=reset] {
+    background-color: cornflowerblue;
+    border-color: black;
+    border-radius: 5px;
+    color: #2f2f2f;
+    min-width: 100px;
+}
+
+input[type=file] {
+    color: grey;
+}
+
+th, td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+video {
+    background-color: black;
+    height: 300px;
+    width: 100%;
+}
+
+#catalogue-div {
+    margin-top: 10px;
+}
+
+#catalogue-table {
+    border: 1px grey solid;
+    width: 100%;
+}
+
+    #catalogue-table > thead {
+        background-color: black;
+        color: white;
+    }
+
+#error-message {
+    background-color: red;
+    color: white;
+    font-style: italic;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+td {
+    color: white;
+}
+
+#uploader-div {
+    margin-top: 10px;
+}
+
+#video-div {
+    margin-top: 10px;
+}
+
+.message {
+    background-color: cornflowerblue;
+    font-style: italic;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.size-column {
+    text-align: right;
+}

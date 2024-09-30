@@ -1,0 +1,29 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-color: #2f2f2f;
+    margin-bottom: 60px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 95% !important;
+    min-width: 400px;
+}
+
+.mb-3 {
+    border-bottom-color: black !important;
+}
