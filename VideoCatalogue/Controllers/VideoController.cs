@@ -62,10 +62,13 @@ namespace VideoCatalogue.Controllers
         {
             try
             {
+                var mediaFolderDirectory = Directory.CreateDirectory(_appSettings.MediaFolder);
+                var directorySizeMB = mediaFolderDirectory.SizeBytes().ToMegaBytes();
+                if (directorySizeMB > _appSettings.MediaFolderMaxMB)
+                    throw new Exception("Media folder is full");
+
                 if (!HttpContext.Request.Form.Files.Any())
                     return new NoContentResult();
-
-                var mediaFolderDirectory = Directory.CreateDirectory(_appSettings.MediaFolder);
 
                 foreach (var file in HttpContext.Request.Form.Files)
                 {
